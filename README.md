@@ -29,6 +29,11 @@ checkout. They clone the `gnome51` branch of the fork above, not this repo.
 - accountsservice is updated to 26.27.3 (Initial Setup 51), and gvfs 1.62
   needs msgraph 0.3.
 - GNOME Logs needs libsystemd and is not provided.
+- GNOME apps are bumped to the newest release that builds against the GTK,
+  GLib and libadwaita official Void ships (for example Nautilus and Settings
+  50.4), not to 51. The soname bumps in `patches/0009` (evolution-data-server
+  3.62, gedit libraries) mean `gnome-shell`, `gnome-calendar`,
+  `gnome-contacts` and other dependents must be rebuilt.
 - `runit-settingsd` (optional) provides the hostname1, timedate1 and locale1
   D-Bus services Settings expects.
 

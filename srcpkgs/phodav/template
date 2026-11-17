@@ -1,0 +1,26 @@
+# Template file for 'phodav'
+pkgname=phodav
+version=3.2
+revision=1
+build_style=meson
+configure_args="-Davahi=enabled -Ddocs=disabled"
+hostmakedepends="pkg-config gettext"
+makedepends="libglib-devel libsoup3-devel libxml2-devel avahi-glib-libs-devel
+ eudev-libudev-devel"
+short_desc="GNOME Web Dav implementation"
+maintainer="Enno Boland <gottox@voidlinux.org>"
+license="LGPL-2.1-or-later"
+homepage="https://wiki.gnome.org/phodav"
+distfiles="${GNOME_SITE}/phodav/${version}/phodav-${version}.tar.xz"
+checksum=93c993066ab3aebd5b539bab9d731eac43abbb750109c895f151ca3c74a5fc82
+
+phodav-devel_package() {
+	depends="libglib-devel libsoup3-devel libxml2-devel
+	 ${sourcepkg}-${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/pkgconfig
+		vmove "usr/lib/*.so"
+	}
+}

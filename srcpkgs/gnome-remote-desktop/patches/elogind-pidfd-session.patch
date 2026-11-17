@@ -1,0 +1,31 @@
+--- a/src/grd-daemon-utils.c	2026-11-18 00:28:37.307044171 +0200
++++ b/src/grd-daemon-utils.c	2026-11-18 00:28:37.319697086 +0200
+@@ -150,10 +150,27 @@
+ char *
+ grd_get_session_id_from_pidfd (int pidfd)
+ {
++  /* elogind lacks sd_pidfd_get_session(): resolve the pid from fdinfo */
++  g_autofree char *fdinfo_path = NULL;
++  g_autofree char *fdinfo = NULL;
++  const char *pid_line;
+   char *session_id = NULL;
++  gint64 pid;
+   int res;
+ 
+-  res = sd_pidfd_get_session (pidfd, &session_id);
++  fdinfo_path = g_strdup_printf ("/proc/self/fdinfo/%d", pidfd);
++  if (!g_file_get_contents (fdinfo_path, &fdinfo, NULL, NULL))
++    return NULL;
++
++  pid_line = strstr (fdinfo, "Pid:");
++  if (!pid_line)
++    return NULL;
++
++  pid = g_ascii_strtoll (pid_line + strlen ("Pid:"), NULL, 10);
++  if (pid <= 0)
++    return NULL;
++
++  res = sd_pid_get_session ((pid_t) pid, &session_id);
+   if (res < 0 && res != -ENODATA)
+     {
+       g_warning ("Failed to retrieve session information for "

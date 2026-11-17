@@ -1,0 +1,18 @@
+# Template file for 'nautilus-python'
+pkgname=nautilus-python
+version=4.2.0
+revision=1
+build_style=meson
+configure_args="$(vopt_feature gtk_doc docs)"
+hostmakedepends="pkg-config $(vopt_if gtk_doc gtk-doc)"
+makedepends="python3-gobject-devel nautilus-devel"
+depends="nautilus python3-gobject"
+short_desc="Python bindings for the Nautilus extension framework"
+maintainer="Nafis <mnabid.25@outlook.com>"
+license="GPL-2.0-or-later"
+homepage="https://wiki.gnome.org/Projects/NautilusPython"
+distfiles="${GNOME_SITE}/nautilus-python/${version%.${version#*.*.}}/nautilus-python-${version}.tar.xz"
+checksum=a45b9b407a6d11328afb4d8a9ea014758c100d77e845ccb280882d2f7e4adfbc
+
+build_options="gtk_doc"
+build_options_default="gtk_doc"

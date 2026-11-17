@@ -1,0 +1,22 @@
+# Template file for 'gnome-sudoku'
+pkgname=gnome-sudoku
+version=51.0.1
+revision=1
+build_style=meson
+hostmakedepends="gettext glib-devel itstool pkg-config vala
+ desktop-file-utils gtk4-update-icon-cache blueprint-compiler"
+makedepends="gtk4-devel libadwaita-devel libgee-devel json-glib-devel qqwing-devel"
+checkdepends="appstream-glib"
+short_desc="GNOME Sudoku Japanese logic game"
+maintainer="icp <pangolin@vivaldi.net>"
+license="GPL-3.0-or-later"
+homepage="https://gitlab.gnome.org/GNOME/gnome-sudoku/-/wikis/home"
+changelog="https://gitlab.gnome.org/GNOME/gnome-sudoku/-/raw/master/NEWS"
+distfiles="${GNOME_SITE}/gnome-sudoku/${version%%.*}/gnome-sudoku-${version}.tar.xz"
+checksum=605f5efdd3e4c652fcc7d1ae70c49094a20c8f091a56011ae037182dfe42d0c8
+
+pre_build() {
+	if [ "$CROSS_BUILD" ]; then
+		export GI_TYPELIB_PATH="${XBPS_CROSS_BASE}/usr/lib/girepository-1.0"
+	fi
+}
