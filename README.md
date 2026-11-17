@@ -47,6 +47,7 @@ checkout. They clone the `gnome51` branch of the fork above, not this repo.
 
 Budgie 10.10 no longer needs Magpie and runs on Wayland with labwc, so it
 builds against GNOME 51: budgie-desktop 10.10.4, budgie-control-center 2.1.3,
-budgie-desktop-view 10.10.3 and budgie-session 1.0.1. budgie-screensaver is
-dropped: it is an X11-only fork of gnome-screensaver, and Budgie 10.10
+budgie-desktop-view 10.10.3, budgie-session 1.0.1 and budgie-extras 2.3.1
+(built with `-Dfor-wayland=true`; the budgie shlibs patch in `patches/` is
+required). budgie-screensaver is dropped: it is an X11-only fork of gnome-screensaver, and Budgie 10.10
 depends on swaylock and swayidle instead.

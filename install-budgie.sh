@@ -18,7 +18,7 @@ BRANCH=gnome51
 
 # Build order; budgie-desktop depends on the others at runtime.
 PKGS="budgie-session budgie-control-center
- budgie-desktop-view budgie-desktop"
+ budgie-desktop-view budgie-desktop budgie-extras"
 # Template directories to copy, including the -devel symlinks.
 TEMPLATES="$PKGS budgie-control-center-devel budgie-desktop-devel"
 
@@ -92,12 +92,19 @@ for p in $TEMPLATES; do
 	run cp -a "$here/srcpkgs/$p" srcpkgs/
 done
 
+# budgie-extras links against libraries budgie-desktop provides; xbps-src needs
+# their common/shlibs entries.
+shlibs=$here/patches/0008-budgie-desktop-add-shlibs.patch
+if [ -n "$dry" ] || ! git apply --reverse --check "$shlibs" 2>/dev/null; then
+	run git apply "$shlibs"
+fi
+
 [ -d masterdir ] || [ -d masterdir-x86_64 ] || run ./xbps-src binary-bootstrap
 for pkg in $PKGS; do
 	run ./xbps-src pkg "$pkg"
 done
 
-run $asroot xbps-install -S --repository="$repo" budgie-desktop
+run $asroot xbps-install -S --repository="$repo" budgie-desktop budgie-extras
 
 [ -z "$dry" ] || exit 0
 cat <<EOF
