@@ -10,8 +10,12 @@ Clean void-packages templates for the GNOME 51 stack, split out of the
 - `install-gnome51.sh`: builds and installs the stack. It still clones the
   `gnome51` branch of the fork above; it does not use this repository.
 
-Budgie, Magpie, GNOME Flashback and gnome-screensaver are removed, not
-ported; `srcpkgs/removed-packages` handles the upgrade.
+Magpie, GNOME Flashback and gnome-screensaver are removed, not ported;
+`srcpkgs/removed-packages` handles the upgrade. Budgie is kept: 10.10 no
+longer needs Magpie (it runs on labwc), and budgie-desktop 10.10.4,
+budgie-control-center 2.1.3, budgie-desktop-view 10.10.3, budgie-session
+1.0.1 and budgie-screensaver 5.1.0 build against GNOME 51. They are built but
+not yet tested in a running session.
 
 ---
 
@@ -35,7 +39,7 @@ ported; `srcpkgs/removed-packages` handles the upgrade.
 - `./install-gnome51.sh -n` previews the build and install commands.
   Run without `-n` to install; `-e` also switches the display manager to GDM.
 - The gnome-desktop ABI change requires rebuilding installed consumers.
-  The installer handles these. Updating `removed-packages` removes Budgie,
-  Magpie, GNOME Flashback and gnome-screensaver.
+  The installer handles these. Updating `removed-packages` removes Magpie,
+  GNOME Flashback and gnome-screensaver.
 - XSETTINGS startup is still missing; musl and cross builds are untested.
 - See [Manual.md](Manual.md) for packaging details.
