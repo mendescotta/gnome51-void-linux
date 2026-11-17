@@ -1,0 +1,29 @@
+From e705a27be90eb8710810f5c503a3bc24ef627a79 Mon Sep 17 00:00:00 2001
+From: mendescotta <mendescotta@gmail.com>
+Date: Thu, 22 Oct 2026 00:40:35 +0300
+Subject: [PATCH 1/7] mutter: update to 51.1.
+
+---
+ common/shlibs | 9 ++++-----
+ 1 file changed, 4 insertions(+), 5 deletions(-)
+
+diff --git a/common/shlibs b/common/shlibs
+index 2bef99d799..e86b9f2c6b 100644
+--- a/common/shlibs
++++ b/common/shlibs
+@@ -3050,11 +3050,10 @@ libdecoration.so.0 compiz-core-0.8.14_1
+ libcompizconfig.so.0 libcompizconfig-0.8.14_1
+ libemeraldengine.so.0 emerald-0.8.14_1
+ libhangul.so.1 libhangul-0.1.0_1
+-libmutter-16.so.0 mutter-48.3.1_1
+-libmutter-clutter-16.so.0 mutter-48.3.1_1
+-libmutter-cogl-16.so.0 mutter-48.3.1_1
+-libmutter-cogl-pango-16.so.0 mutter-48.3.1_1
+-libmutter-mtk-16.so.0 mutter-48.3.1_1
++libmutter-51.so.0 mutter-51.1_1
++libmutter-clutter-51.so.0 mutter-51.1_1
++libmutter-cogl-51.so.0 mutter-51.1_1
++libmutter-mtk-51.so.0 mutter-51.1_1
+ libgeoclue-2.so.0 geoclue2-2.4.4_1
+ libgepub-0.7.so.0 libgepub-0.7.1_1
+ libslopy.so.7.7 slop-7.7_1

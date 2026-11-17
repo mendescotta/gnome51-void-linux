@@ -1,0 +1,22 @@
+From 6d3152dd4abeeb4857ac2fc3474d4fe85b8fe022 Mon Sep 17 00:00:00 2001
+From: mendescotta <mendescotta@gmail.com>
+Date: Sun, 15 Nov 2026 23:57:00 +0200
+Subject: [PATCH 6/7] msgraph: update to 0.3.5.
+
+---
+ common/shlibs | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/common/shlibs b/common/shlibs
+index a85c2a2fe1..2195f05a8b 100644
+--- a/common/shlibs
++++ b/common/shlibs
+@@ -4605,7 +4605,7 @@ libunicode_loader.so.0.4 libunicode-0.4.0_1
+ force-stage.so.0.1 void-force-stage-0.1_1
+ libliftoff.so.0 libliftoff-0.4.1_1
+ libscfg.so libscfg-0.1.1_1
+-libmsgraph-0.so.1 msgraph-0.2.1_1
++libmsgraph-1.so.1 msgraph-0.3.5_1
+ libgtk-session-lock.so.0 gtk-session-lock-0.2.0_1
+ libcamera.so.0.7 libcamera-0.7.0_1
+ libcamera-base.so.0.7 libcamera-0.7.0_1

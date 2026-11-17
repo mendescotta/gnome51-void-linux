@@ -1,0 +1,22 @@
+From 50f84c50ebf7c5508e7c43c64c3967ec50ec000b Mon Sep 17 00:00:00 2001
+From: mendescotta <mendescotta@gmail.com>
+Date: Fri, 23 Oct 2026 18:03:22 +0300
+Subject: [PATCH 5/7] yelp: update to 49.2.
+
+---
+ common/shlibs | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/common/shlibs b/common/shlibs
+index ae12ab95d9..a85c2a2fe1 100644
+--- a/common/shlibs
++++ b/common/shlibs
+@@ -772,7 +772,7 @@ libbrasero-burn3.so.1 brasero-2.91.90_1
+ libbrasero-media3.so.1 brasero-2.91.90_1
+ libbrasero-utils3.so.1 brasero-2.91.90_1
+ libXss.so.1 libXScrnSaver-1.1.3_1
+-libyelp.so.0 yelp-3.36.0_1
++libyelp-1.so.0 yelp-49.2_1
+ libpeas-1.0.so.1 libpeas-1.38.1_1
+ libpeas-gtk-1.0.so.1 libpeas-1.38.1_1
+ libpeas-2.so.0 libpeas2-2.0.1_1

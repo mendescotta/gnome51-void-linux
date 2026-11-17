@@ -1,0 +1,22 @@
+From 833d90ba2c7f6dd5f855e94ea64d83e3aaae616e Mon Sep 17 00:00:00 2001
+From: mendescotta <mendescotta@gmail.com>
+Date: Sun, 15 Nov 2026 23:57:00 +0200
+Subject: [PATCH 7/7] accountsservice: update to 26.27.3.
+
+---
+ common/shlibs | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/common/shlibs b/common/shlibs
+index 2195f05a8b..ffa73227b5 100644
+--- a/common/shlibs
++++ b/common/shlibs
+@@ -781,7 +781,7 @@ libclutter-1.0.so.0 clutter-1.14.0_1
+ libavfs.so.1 libavfs-1.2.0_1
+ libgjs.so.0 gjs-1.65.2_1
+ libtelepathy-glib.so.0 telepathy-glib-0.15.5_1
+-libaccountsservice.so.0 accountsservice-0.6.4_1
++libaccountsservice.so.1 accountsservice-26.27.3_1
+ libfolks.so.26 folks-0.15.0_1
+ libfolks-dummy.so.26 folks-0.15.0_1
+ libfolks-telepathy.so.26 folks-0.15.0_1

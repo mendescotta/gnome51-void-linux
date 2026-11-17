@@ -1,0 +1,27 @@
+From b9b0b74c2084805a53af9a0d50750b5687013e9c Mon Sep 17 00:00:00 2001
+From: mendescotta <mendescotta@gmail.com>
+Date: Fri, 23 Oct 2026 14:09:07 +0300
+Subject: [PATCH 2/7] gnome-desktop: update to 51.0.
+
+---
+ common/shlibs | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/common/shlibs b/common/shlibs
+index e86b9f2c6b..b9ac15f99f 100644
+--- a/common/shlibs
++++ b/common/shlibs
+@@ -1129,10 +1129,11 @@ libgsttranscoder-1.0.so.0 gst-plugins-bad1-1.18.4_2
+ libgstanalytics-1.0.so.0 gst-plugins-bad1-1.26.2_1
+ libgstgl-1.0.so.0 gst-plugins-base1-1.14.0_1
+ libgstrtspserver-1.0.so.0 gst-rtsp-server-1.24.0_1
+-libgnome-desktop-3.so.20 gnome-desktop-43.0_1
++libgnome-desktop-3.so.21 gnome-desktop-51.0_1
+ libgnome-desktop-4.so.2 gnome-desktop-43.0_1
+ libgnome-bg-4.so.2 gnome-desktop-43.0_1
+-libgnome-rr-4.so.2 gnome-desktop-43.0_1
++libgnome-qr-4.so.0 gnome-desktop-51.0_1
++libgnome-qr-gtk-4.so.0 gnome-desktop-51.0_1
+ libsecret-1.so.0 libsecret-0.10_1
+ libgweather-4.so.0 libgweather-4.0.0_1
+ libgnomekbd.so.8 libgnomekbd-3.6.0_1
