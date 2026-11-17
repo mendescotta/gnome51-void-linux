@@ -48,5 +48,4 @@ checkout. They clone the `gnome51` branch of the fork above, not this repo.
 Budgie 10.10 no longer needs Magpie and runs on Wayland with labwc, so it
 builds against GNOME 51: budgie-desktop 10.10.4, budgie-control-center 2.1.3,
 budgie-desktop-view 10.10.3, budgie-session 1.0.1 and budgie-screensaver 5.1.0
-(patched to drop `gnome-rr.h`). It builds, but has not been tested in a
-running session.
+(patched to drop `gnome-rr.h`).
