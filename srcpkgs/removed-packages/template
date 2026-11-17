@@ -60,6 +60,7 @@ replaces="
  bluez-qt5<=5.115.0_1
  bokken<=1.8_3
  bomi<=0.9.11_17
+ budgie-screensaver<=5.1.0_3
  buildbot-slave<=0.8.14_3
  buildbot<=0.8.14_5
  burp-client<=1.4.40_13

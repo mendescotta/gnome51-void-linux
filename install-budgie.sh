@@ -17,7 +17,7 @@ REPO=https://github.com/mendescotta/void-packages.git
 BRANCH=gnome51
 
 # Build order; budgie-desktop depends on the others at runtime.
-PKGS="budgie-session budgie-screensaver budgie-control-center
+PKGS="budgie-session budgie-control-center
  budgie-desktop-view budgie-desktop"
 # Template directories to copy, including the -devel symlinks.
 TEMPLATES="$PKGS budgie-control-center-devel budgie-desktop-devel"
