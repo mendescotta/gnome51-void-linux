@@ -31,11 +31,6 @@ checkout. They clone the `gnome51` branch of the fork above, not this repo.
 - GNOME Logs needs libsystemd and is not provided.
 - `runit-settingsd` (optional) provides the hostname1, timedate1 and locale1
   D-Bus services Settings expects.
-- The gnome-desktop ABI change means installed consumers must be rebuilt; the
-  installer does this.
-- Removed, not ported: Magpie, GNOME Flashback and gnome-screensaver.
-  `removed-packages` handles the upgrade.
-- XSETTINGS startup is still missing; musl and cross builds are untested.
 
 ## Budgie
 
