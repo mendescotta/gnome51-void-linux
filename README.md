@@ -6,7 +6,7 @@ Budgie 10.10 ported to it. Split out of the `gnome51` branch of
 
 ## Contents
 
-- `srcpkgs/`: updated and new templates with their patches, built and tested
+- `srcpkgs/`: updated and new templates with their patches, built
   on a stock Void system (void-packages master, 2026-11-25). Replace each
   matching directory in a void-packages checkout (remove it first, so Void's
   old patches do not linger; Apostrophe 3.5 fails with Void's 2.6 patch).
