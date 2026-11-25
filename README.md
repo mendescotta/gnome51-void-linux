@@ -6,8 +6,10 @@ Budgie 10.10 ported to it. Split out of the `gnome51` branch of
 
 ## Contents
 
-- `srcpkgs/`: updated and new templates with their patches. Copy them over a
-  void-packages checkout based on upstream commit c06edb3c22.
+- `srcpkgs/`: updated and new templates with their patches, built and tested
+  on a stock Void system (void-packages master, 2026-11-25). Replace each
+  matching directory in a void-packages checkout (remove it first, so Void's
+  old patches do not linger; Apostrophe 3.5 fails with Void's 2.6 patch).
 - `patches/`: `common/shlibs` changes, in order (`git am` or `git apply`).
 - `install-gnome51.sh`: builds and installs the GNOME stack.
 - `install-budgie.sh`: builds and installs Budgie on top of it.
@@ -42,6 +44,13 @@ checkout. They clone the `gnome51` branch of the fork above, not this repo.
   them.
 - `runit-settingsd` (optional) provides the hostname1, timedate1 and locale1
   D-Bus services Settings expects.
+
+## Apps
+
+Besides the GNOME 51 stack: Maps 51.3, Manuals 50.1 (with its library
+foundry 1.2.0; shlibs in `patches/0010`), and the GNOME Circle apps
+Apostrophe 3.5 (GTK 4 rewrite), Citations 0.10.0, NewsFlash 6.0.2, Pika Backup
+0.8.4 and Wike 3.2.1. Citations stays at 0.10.0 because 0.11 needs GTK 4.23.
 
 ## Budgie
 
