@@ -16,8 +16,9 @@ set -eu
 REPO=https://github.com/mendescotta/void-packages.git
 BRANCH=gnome51
 
-# Build order; budgie-desktop depends on the others at runtime.
-PKGS="budgie-session budgie-control-center
+# Build order; budgie-desktop depends on the others at runtime. budgie-session
+# comes from Void (same version), pulled in as a dependency.
+PKGS="budgie-control-center
  budgie-desktop-view budgie-desktop budgie-extras"
 # Template directories to copy, including the -devel symlinks.
 TEMPLATES="$PKGS budgie-control-center-devel budgie-desktop-devel"

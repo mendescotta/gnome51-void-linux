@@ -18,22 +18,22 @@ REPO=https://github.com/mendescotta/void-packages.git
 BRANCH=gnome51
 
 # Build order: each package only needs the ones before it.
-PKGS="accountsservice dconf gjs msgraph gvfs tinysparql localsearch
+PKGS="accountsservice dconf gjs tinysparql localsearch
  gnome-bluetooth gnome-user-docs gsettings-desktop-schemas gnome-desktop gnome-settings-daemon mutter
  gnome-shell gnome-control-center gnome-session gdm xdg-desktop-portal-gnome
  gnome-shell-extensions adwaita-fonts adwaita-icon-theme gnome-backgrounds
- gnome-initial-setup gnome-keyring gnome-online-accounts gnome-core"
+ gnome-initial-setup gnome-keyring gnome-core"
 
 # Rebuilt for libgnome-desktop-3.so.21; built and updated only when installed.
 # removed-packages uninstalls the packages that still need .so.20.
 REBUILDS="cheese cheese-devel libcheese eog eog-devel evince evince-devel libevince
- evolution evolution-devel gnome-panel gnome-panel-devel totem libtotem totem-devel
- xdg-desktop-portal-gtk openbox openbox-devel libopenbox removed-packages
+ evolution evolution-devel totem libtotem totem-devel
+ xdg-desktop-portal-gtk removed-packages
  gnome gnome-apps gnome-games-collection
  baobab gnome-calculator gnome-calendar gnome-characters gnome-clocks
  gnome-connections gnome-console gnome-contacts gnome-maps gnome-music
  gnome-software gnome-system-monitor gnome-text-editor gnome-tour gnome-weather
- glycin libshumate loupe papers simple-scan"
+ glycin libshumate simple-scan"
 
 DMS="lightdm sddm lxdm slim xdm emptty greetd"
 
@@ -112,9 +112,7 @@ for pkg in $REBUILDS; do
 		eog-devel) source=eog ;;
 		evince-devel|libevince) source=evince ;;
 		evolution-devel) source=evolution ;;
-		gnome-panel-devel) source=gnome-panel ;;
 		libtotem|totem-devel) source=totem ;;
-		openbox-devel|libopenbox) source=openbox ;;
 		gnome-apps|gnome-games-collection) source=gnome ;;
 		*) source=$pkg ;;
 	esac

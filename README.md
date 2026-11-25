@@ -27,14 +27,18 @@ checkout. They clone the `gnome51` branch of the fork above, not this repo.
   GTK 4.23 and Nautilus 51 needs GTK 4.24 with GLib 2.89.
 - WebKitGTK is updated to 2.54.3 (libwebkit2gtk41 and libwebkitgtk60), which
   Web (Epiphany) 51.3 needs.
-- accountsservice is updated to 26.27.3 (Initial Setup 51), and gvfs 1.62
-  needs msgraph 0.3.
+- accountsservice is updated to 26.27.3 (Initial Setup 51).
 - GNOME Logs needs libsystemd and is not provided.
 - GNOME apps are bumped to the newest release that builds against the GTK,
   GLib and libadwaita official Void ships (for example Nautilus and Settings
   50.4), not to 51. The soname bumps in `patches/0009` (evolution-data-server
   3.62, gedit libraries) mean `gnome-shell`, `gnome-calendar`,
   `gnome-contacts` and other dependents must be rebuilt.
+- Not carried: gnome-panel, metacity, openbox, pidgin, planify and
+  io.elementary.calendar. Void's builds of gnome-panel, pidgin, planify and
+  io.elementary.calendar link the evolution-data-server (and, for
+  gnome-panel, gnome-desktop) libraries bumped here, so remove them before
+  installing.
 - `runit-settingsd` (optional) provides the hostname1, timedate1 and locale1
   D-Bus services Settings expects.
 
@@ -48,7 +52,8 @@ checkout. They clone the `gnome51` branch of the fork above, not this repo.
 
 Budgie 10.10 no longer needs Magpie and runs on Wayland with labwc, so it
 builds against GNOME 51: budgie-desktop 10.10.4, budgie-control-center 2.1.3,
-budgie-desktop-view 10.10.3, budgie-session 1.0.1 and budgie-extras 2.3.1
+budgie-desktop-view 10.10.3 and budgie-extras 2.3.1, with Void's
+budgie-session 1.0.1
 (built with `-Dfor-wayland=true`; the budgie shlibs patch in `patches/` is
 required). budgie-screensaver is dropped: it is an X11-only fork of gnome-screensaver, and Budgie 10.10
 depends on swaylock and swayidle instead.
