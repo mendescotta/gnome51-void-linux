@@ -1,0 +1,13 @@
+# Template file for 'wike'
+pkgname=wike
+version=3.2.1
+revision=1
+build_style=meson
+hostmakedepends="pkg-config glib-devel gettext"
+depends="python3-gobject python3-requests gtk4 libadwaita libwebkitgtk60"
+short_desc="Wikipedia Reader for the GNOME Desktop"
+maintainer="Orphaned <orphan@voidlinux.org>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/hugolabe/Wike"
+distfiles="https://github.com/hugolabe/Wike/archive/refs/tags/${version}.tar.gz"
+checksum=de52117c48ba0cd88d3d69373c9e762181305430bad8dd4bc2bb817df2c26009

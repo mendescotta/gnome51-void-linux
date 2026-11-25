@@ -1,0 +1,11 @@
+diff --git a/common/shlibs b/common/shlibs
+index 1a4ad11..385ac04 100644
+--- a/common/shlibs
++++ b/common/shlibs
+@@ -4695,3 +4695,6 @@ libcgif.so.0 cgif-0.5.3_1
+ libdsk.so.5 libdsk-1.5.22_1
+ libblend2d.so libblend2d-0.21.2_1
+ libqjs.so.0 libquickjs-ng-0.18.0_1
++libfoundry-1.so.1 foundry-1.2.0_1
++libfoundry-gtk-1.so.1 foundry-1.2.0_1
++libfoundry-adw-1.so.1 foundry-1.2.0_1
