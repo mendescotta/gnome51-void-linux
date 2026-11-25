@@ -1,0 +1,15 @@
+# Template file for 'manuals'
+pkgname=manuals
+version=50.1
+revision=1
+build_style=meson
+hostmakedepends="pkg-config glib-devel gettext desktop-file-utils AppStream"
+makedepends="libglib-devel gtk4-devel libadwaita-devel libdex-devel libpanel-devel
+ foundry-devel gom-devel flatpak-devel libwebkitgtk60-devel"
+short_desc="Developer documentation browser for GNOME"
+maintainer="Orphaned <orphan@voidlinux.org>"
+license="GPL-3.0-or-later"
+homepage="https://apps.gnome.org/Manuals/"
+changelog="https://gitlab.gnome.org/GNOME/manuals/-/raw/main/NEWS"
+distfiles="${GNOME_SITE}/manuals/${version%.*}/manuals-${version}.tar.xz"
+checksum=7e8441755d0de717428c800e45ae06c85ec964af46ac53b9dc65b41bc3a32c74
