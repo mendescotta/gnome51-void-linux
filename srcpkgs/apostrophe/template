@@ -1,0 +1,17 @@
+# Template file for 'apostrophe'
+pkgname=apostrophe
+version=3.5
+revision=1
+build_style=meson
+build_helper=gir
+hostmakedepends="python3 glib-devel pkg-config gettext desktop-file-utils"
+makedepends="libglib-devel gtk4-devel libadwaita-devel"
+depends="python3-gobject python3-chardet python3-pypandoc python3-regex
+ gtk4 libadwaita gtksourceview5 libspelling libwebkitgtk60"
+short_desc="GTK based distraction free Markdown editor"
+maintainer="Orphaned <orphan@voidlinux.org>"
+license="GPL-3.0-only"
+homepage="https://gitlab.gnome.org/World/apostrophe"
+changelog="https://gitlab.gnome.org/World/apostrophe/-/raw/main/NEWS"
+distfiles="https://gitlab.gnome.org/World/apostrophe/-/archive/v$version/apostrophe-v$version.tar.gz"
+checksum=67db4b783e0a69eb22cb393e92e91f53fb48d72598379a5829b7d05d95dc3149
