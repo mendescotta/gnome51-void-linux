@@ -24,8 +24,9 @@ checkout. They clone the `gnome51` branch of the fork above, not this repo.
 ```
 
 - Settings stays at 50 and Files (Nautilus) at 50.2.2: Settings 51 needs
-  GTK 4.23 and Nautilus 51 needs GTK 4.24 with GLib 2.89. Epiphany stays at
-  50.6 because 51 does not build against WebKitGTK 2.50.4.
+  GTK 4.23 and Nautilus 51 needs GTK 4.24 with GLib 2.89.
+- WebKitGTK is updated to 2.54.3 (libwebkit2gtk41 and libwebkitgtk60), which
+  Web (Epiphany) 51.3 needs.
 - accountsservice is updated to 26.27.3 (Initial Setup 51), and gvfs 1.62
   needs msgraph 0.3.
 - GNOME Logs needs libsystemd and is not provided.

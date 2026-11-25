@@ -1,0 +1,65 @@
+commit 7366988f033d29f2b2e2e68fedb8827ba09a2cc1
+Author: Daniel Kolesa <daniel@octaforge.org>
+Date:   Wed Jan 5 17:50:07 2022 +0100
+
+    reproducible build
+
+
+--- a/Source/WebCore/bindings/scripts/CodeGeneratorJS.pm
++++ b/Source/WebCore/bindings/scripts/CodeGeneratorJS.pm
+@@ -3587,7 +3587,7 @@
+         } else {
+             push(@headerContent, "    static constexpr unsigned StructureFlags = Base::StructureFlags");
+         }
+-        foreach my $structureFlag (sort (keys %structureFlags)) {
++        foreach my $structureFlag (sort (sort keys %structureFlags)) {
+             push(@headerContent, " | " . $structureFlag);
+         }
+         push(@headerContent, ";\n");
+@@ -8523,7 +8523,7 @@
+ 
+     my @includes = ();
+     my %implIncludeConditions = ();
+-    foreach my $include (keys %implIncludes) {
++    foreach my $include (sort keys %implIncludes) {
+         next if $headerIncludes{$include};
+         next if $headerTrailingIncludes{$include};
+ 
+@@ -8632,7 +8632,7 @@
+     $contents = join "", @headerContentHeader;
+ 
+     @includes = ();
+-    foreach my $include (keys %headerIncludes) {
++    foreach my $include (sort keys %headerIncludes) {
+         if (IsPrivateHeader("JS$name.h")) {
+            $include = "<WebCore/$include>" unless $include =~ /^["<]/; # "
+         } else {
+@@ -8651,7 +8651,7 @@
+     $contents .= join "", @headerContent;
+ 
+     @includes = ();
+-    foreach my $include (keys %headerTrailingIncludes) {
++    foreach my $include (sort keys %headerTrailingIncludes) {
+         if (IsPrivateHeader("JS$name.h")) {
+            $include = "<WebCore/$include>" unless $include =~ /^["<]/; # "
+         } else {
+@@ -8726,7 +8726,7 @@
+     if (%structureFlags) {
+         push(@$outputArray, "public:\n");
+         push(@$outputArray, "    static constexpr unsigned StructureFlags = Base::StructureFlags");
+-        foreach my $structureFlag (sort (keys %structureFlags)) {
++        foreach my $structureFlag (sort (sort keys %structureFlags)) {
+             push(@$outputArray, " | " . $structureFlag);
+         }
+         push(@$outputArray, ";\n");
+--- a/Source/WebCore/bindings/scripts/CodeGenerator.pm
++++ b/Source/WebCore/bindings/scripts/CodeGenerator.pm
+@@ -333,7 +333,7 @@
+ {
+     my ($object, $supplementalExtendedAttributes, $property, $context) = @_;
+ 
+-    foreach my $extendedAttributeName (keys %{$supplementalExtendedAttributes}) {
++    foreach my $extendedAttributeName (sort keys %{$supplementalExtendedAttributes}) {
+         my $isAllowed = 0;
+         for my $contextAllowed (@{$idlAttributes->{$extendedAttributeName}->{"contextsAllowed"}}) {
+             if ($contextAllowed eq $context) {
