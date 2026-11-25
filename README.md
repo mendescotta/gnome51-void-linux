@@ -37,8 +37,9 @@ checkout. They clone the `gnome51` branch of the fork above, not this repo.
 - Not carried: gnome-panel, metacity, openbox, pidgin, planify and
   io.elementary.calendar. Void's builds of gnome-panel, pidgin, planify and
   io.elementary.calendar link the evolution-data-server (and, for
-  gnome-panel, gnome-desktop) libraries bumped here, so remove them before
-  installing.
+  gnome-panel, gnome-desktop) libraries bumped here, so `removed-packages`
+  (Void's list plus those and the dropped Budgie/flashback pieces) uninstalls
+  them.
 - `runit-settingsd` (optional) provides the hostname1, timedate1 and locale1
   D-Bus services Settings expects.
 
